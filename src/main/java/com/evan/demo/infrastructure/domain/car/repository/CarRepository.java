@@ -1,6 +1,6 @@
-package com.evan.demo.repository;
+package com.evan.demo.infrastructure.domain.car.repository;
 
-import com.evan.demo.model.Car;
+import com.evan.demo.domain.car.entity.Car;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Repository
 public class CarRepository {
-    private List<Car> cars;
+    private final List<Car> cars;
 
     public CarRepository() {
         this.cars = new ArrayList<Car>();

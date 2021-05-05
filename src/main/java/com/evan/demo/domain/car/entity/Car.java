@@ -1,4 +1,4 @@
-package com.evan.demo.model;
+package com.evan.demo.domain.car.entity;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 

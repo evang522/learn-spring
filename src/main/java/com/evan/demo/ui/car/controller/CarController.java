@@ -1,7 +1,7 @@
-package com.evan.demo;
+package com.evan.demo.ui.car.controller;
 
-import com.evan.demo.model.Car;
-import com.evan.demo.repository.CarRepository;
+import com.evan.demo.domain.car.entity.Car;
+import com.evan.demo.infrastructure.domain.car.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,12 +10,12 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-public class DefaultController
+public class CarController
 {
-    private CarRepository carRepo;
+    private final CarRepository carRepo;
 
     @Autowired
-    public DefaultController(CarRepository carRepo)
+    public CarController(CarRepository carRepo)
     {
         this.carRepo = carRepo;
     }
@@ -52,10 +52,5 @@ public class DefaultController
     public Car getCarById(@PathVariable("id") UUID id)
     {
         return this.carRepo.getCarById(id).orElse(null);
-    }
-
-    public void getStuff()
-    {
-
     }
 }
