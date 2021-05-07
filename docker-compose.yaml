@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+#  java:
+#    container_name: java_demo
+#    volumes:
+#      - ./:/demo
+#    build: .
+#    ports:
+#      - "8080:8080"
+#    networks:
+#      java_demo:
+#        ipv4_address: 10.100.0.6
+#    command: sh run.sh
+
+  pgsql:
+    container_name: pgsql
+    image: postgres:12.4
+    ports:
+      - "5432:5432"
+    networks:
+      java_demo:
+        ipv4_address: 10.100.0.4
+
+networks:
+  java_demo:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "10.100.0.0/24"
